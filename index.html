@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Victoria Guimarães | Extensão de Cílios</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #fffaf7;
+            color: #211917;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        :root {
+            --nude: #ead5ca;
+            --rose: #c69a8b;
+            --rose-dark: #9d7063;
+            --black: #211917;
+            --white: #fffaf7;
+            --cream: #f8f0eb;
+            --brown: #6f5046;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(255, 250, 247, 0.90);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(157, 112, 99, 0.15);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--black);
+        }
+
+        .logo-sub {
+            font-size: 9px;
+            letter-spacing: 4px;
+            margin-top: 5px;
+            color: var(--rose-dark);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--black);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--rose-dark);
+        }
+
+        .nav-button {
+            background: var(--black);
+            color: white !important;
+            padding: 11px 19px;
+            border-radius: 30px;
+        }
+
+        .nav-button:hover {
+            background: var(--rose-dark);
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(33, 25, 23, 0.35),
+                    rgba(33, 25, 23, 0.05)
+                ),
+                url("banner.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 120px 7% 80px;
+
+            color: white;
+        }
+
+        .hero-content small {
+            display: block;
+
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            max-width: 600px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(55px, 7vw, 95px);
+
+            line-height: .95;
+
+            font-weight: 500;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            max-width: 480px;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 0 25px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: .8px;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--rose);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--rose-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.10);
+
+            border: 1px solid rgba(255,255,255,.7);
+
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--black);
+        }
+
+
+        /* ================================
+           PORTFÓLIO
+        ================================= */
+
+        .portfolio {
+            padding: 100px 20px;
+            background: var(--cream);
+        }
+
+        .portfolio-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            display: block;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            color: var(--rose-dark);
+
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(42px, 6vw, 60px);
+
+            font-weight: 500;
+
+            color: var(--black);
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--brown);
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           CARROSSEL
+           FORMATO INSTAGRAM 4:5
+        ================================= */
+
+        .carousel {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 540px;
+
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            width: 100%;
+
+            aspect-ratio: 4 / 5;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background: var(--nude);
+
+            box-shadow:
+                0 20px 50px rgba(33, 25, 23, 0.16);
+        }
+
+        .slide {
+            display: none;
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+
+            inset: 0;
+        }
+
+        .slide.active {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            display: block;
+
+            background: var(--nude);
+        }
+
+
+        /* ================================
+           BOTÕES CARROSSEL
+        ================================= */
+
+        .carousel-btn {
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 46px;
+            height: 46px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255, 250, 247, 0.95);
+
+            color: var(--black);
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 10;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.15);
+
+            transition: .3s;
+        }
+
+        .carousel-btn:hover {
+            background: var(--rose);
+
+            color: white;
+
+            transform:
+                translateY(-50%)
+                scale(1.05);
+        }
+
+        .carousel-prev {
+            left: -23px;
+        }
+
+        .carousel-next {
+            right: -23px;
+        }
+
+
+        /* ================================
+           DOTS
+        ================================= */
+
+        .carousel-dots {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 22px;
+        }
+
+        .carousel-dot {
+            width: 9px;
+            height: 9px;
+
+            padding: 0;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d5b9ae;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .carousel-dot.active {
+            width: 25px;
+
+            border-radius: 10px;
+
+            background: var(--rose-dark);
+        }
+
+
+        /* ================================
+           SERVIÇOS
+        ================================= */
+
+        .services {
+            padding: 100px 7%;
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 40px 30px;
+
+            background: var(--cream);
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            border:
+                1px solid rgba(157,112,99,.10);
+
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(33,25,23,.10);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background: var(--nude);
+
+            color: var(--rose-dark);
+
+            font-size: 22px;
+        }
+
+        .service-card h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--brown);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================================
+           CTA
+        ================================= */
+
+        .cta {
+            min-height: 600px;
+
+            background-image:
+                linear-gradient(
+                    rgba(33,25,23,.45),
+                    rgba(33,25,23,.45)
+                ),
+                url("banner.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            color: white;
+        }
+
+        .cta-content span {
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+        .cta-content h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(45px, 7vw, 75px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            margin: 20px 0;
+        }
+
+        .cta-content p {
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            padding: 35px 20px;
+
+            background: var(--black);
+
+            text-align: center;
+
+            color: rgba(255,255,255,.7);
+
+            font-size: 11px;
+
+            letter-spacing: .5px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* ================================
+           WHATSAPP FLUTUANTE
+        ================================= */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 27px;
+
+            z-index: 999;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.25);
+
+            transition: .3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                padding: 0 5%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a:not(.nav-button) {
+                display: none;
+            }
+
+            .hero-content {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                max-width: 500px;
+
+                margin: auto;
+
+                width: 100%;
+            }
+        }
+
+
+        /* ================================
+           CELULAR
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 65px;
+            }
+
+            .logo-main {
+                font-size: 24px;
+            }
+
+            .logo-sub {
+                font-size: 8px;
+                letter-spacing: 3px;
+            }
+
+            .nav-button {
+                padding: 9px 14px;
+                font-size: 10px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 90vh;
+
+                background-position:
+                    62% center;
+            }
+
+            .hero-content {
+                padding:
+                    120px 25px 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 57px;
+            }
+
+            .hero-content p {
+                font-size: 13px;
+
+                max-width: 340px;
+            }
+
+
+            /* PORTFÓLIO */
+
+            .portfolio {
+                padding:
+                    70px 15px;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .section-title h2 {
+                font-size: 43px;
+            }
+
+            .section-title p {
+                font-size: 12px;
+            }
+
+            .carousel {
+                max-width: 100%;
+            }
+
+            .carousel-track {
+                aspect-ratio: 4 / 5;
+
+                border-radius: 14px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+
+                font-size: 17px;
+            }
+
+            .carousel-prev {
+                left: 8px;
+            }
+
+            .carousel-next {
+                right: 8px;
+            }
+
+
+            /* SERVIÇOS */
+
+            .services {
+                padding:
+                    70px 20px;
+            }
+
+            .service-card {
+                padding:
+                    35px 25px;
+            }
+
+
+            /* CTA */
+
+            .cta {
+                min-height:
+                    500px;
+
+                background-position:
+                    center;
+            }
+
+            .cta-content h2 {
+                font-size:
+                    48px;
+            }
+
+
+            /* WHATSAPP */
+
+            .whatsapp-float {
+                width:
+                    53px;
+
+                height:
+                    53px;
+
+                right:
+                    17px;
+
+                bottom:
+                    17px;
+
+                font-size:
+                    24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+
+            <span class="logo-main">
+                Victoria
+            </span>
+
+            <span class="logo-sub">
+                GUIMARÃES
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#trabalhos">
+                Trabalhos
+            </a>
+
+            <a href="#servicos">
+                Serviços
+            </a>
+
+            <!-- WHATSAPP -->
+            <a
+                href="https://wa.me/5598981653305"
+                target="_blank"
+                class="nav-button"
+            >
+                Agendar
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section
+        class="hero"
+        id="inicio"
+    >
+
+        <div class="hero-content">
+
+            <small>
+                Beleza • Elegância • Autoestima
+            </small>
+
+            <h1>
+                Realce sua beleza.
+            </h1>
+
+            <p>
+                Um olhar marcante começa nos detalhes.
+                Conheça meu trabalho e transforme sua
+                beleza em uma experiência única.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <!-- WHATSAPP -->
+                <a
+                    href="https://wa.me/5598981653305"
+                    target="_blank"
+                    class="btn btn-primary"
+                >
+                    Agendar atendimento
+                </a>
+
+
+                <a
+                    href="#trabalhos"
+                    class="btn btn-secondary"
+                >
+                    Ver trabalhos
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         TRABALHOS
+    ================================= -->
+
+    <section
+        class="portfolio"
+        id="trabalhos"
+    >
+
+        <div class="portfolio-container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Portfólio
+                </span>
+
+                <h2>
+                    Meus Trabalhos
+                </h2>
+
+                <p>
+                    Confira alguns dos meus trabalhos
+                </p>
+
+            </div>
+
+
+            <!-- ============================
+                 CARROSSEL
+            ============================= -->
+
+            <div class="carousel">
+
+                <div class="carousel-track">
+
+
+                    <div class="slide active">
+
+                        <img
+                            src="foto1.jpg"
+                            alt="Trabalho de Victoria Guimarães"
+                        >
+
+                    </div>
+
+
+                    <div class="slide">
+
+                        <img
+                            src="foto2.jpg"
+                            alt="Trabalho de Victoria Guimarães"
+                        >
+
+                    </div>
+
+
+                    <div class="slide">
+
+                        <img
+                            src="foto3.jpg"
+                            alt="Trabalho de Victoria Guimarães"
+                        >
+
+                    </div>
+
+
+                    <div class="slide">
+
+                        <img
+                            src="foto4.jpg"
+                            alt="Trabalho de Victoria Guimarães"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ANTERIOR -->
+
+                <button
+                    class="carousel-btn carousel-prev"
+                    onclick="previousSlide()"
+                    aria-label="Foto anterior"
+                >
+                    &#10094;
+                </button>
+
+
+                <!-- PRÓXIMO -->
+
+                <button
+                    class="carousel-btn carousel-next"
+                    onclick="nextSlide()"
+                    aria-label="Próxima foto"
+                >
+                    &#10095;
+                </button>
+
+
+                <!-- DOTS -->
+
+                <div class="carousel-dots">
+
+                    <button
+                        class="carousel-dot active"
+                        onclick="goToSlide(0)"
+                        aria-label="Foto 1"
+                    ></button>
+
+                    <button
+                        class="carousel-dot"
+                        onclick="goToSlide(1)"
+                        aria-label="Foto 2"
+                    ></button>
+
+                    <button
+                        class="carousel-dot"
+                        onclick="goToSlide(2)"
+                        aria-label="Foto 3"
+                    ></button>
+
+                    <button
+                        class="carousel-dot"
+                        onclick="goToSlide(3)"
+                        aria-label="Foto 4"
+                    ></button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         SERVIÇOS
+    ================================= -->
+
+    <section
+        class="services"
+        id="servicos"
+    >
+
+        <div class="services-container">
+
+
+            <div class="section-title">
+
+                <span>
+                    Atendimento
+                </span>
+
+                <h2>
+                    Serviços
+                </h2>
+
+                <p>
+                    Cuidado, técnica e atenção em cada detalhe.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Extensão de Cílios
+                    </h3>
+
+                    <p>
+                        Procedimentos realizados com cuidado
+                        e atenção para valorizar o seu olhar.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Design do Olhar
+                    </h3>
+
+                    <p>
+                        Técnicas pensadas para deixar seu olhar
+                        ainda mais marcante e harmonioso.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Atendimento Personalizado
+                    </h3>
+
+                    <p>
+                        Cada atendimento é pensado de acordo
+                        com suas preferências e necessidades.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         CTA FINAL
+    ================================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <span>
+                Agende seu horário
+            </span>
+
+            <h2>
+                Vamos realçar sua beleza?
+            </h2>
+
+            <p>
+                Entre em contato e marque seu atendimento.
+                Será um prazer cuidar de você.
+            </p>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/5598981653305"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                Falar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        © 2026
+
+        <strong>
+            Victoria Guimarães
+        </strong>.
+
+        Todos os direitos reservados.
+
+    </footer>
+
+
+
+    <!-- ================================
+         WHATSAPP FLUTUANTE
+    ================================= -->
+
+    <a
+        href="https://wa.me/5598981653305"
+        target="_blank"
+        class="whatsapp-float"
+        aria-label="Falar pelo WhatsApp"
+    >
+        ☎
+    </a>
+
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        let currentSlide = 0;
+
+        const slides =
+            document.querySelectorAll(".slide");
+
+        const dots =
+            document.querySelectorAll(".carousel-dot");
+
+
+        function showSlide(index) {
+
+            if (index >= slides.length) {
+                currentSlide = 0;
+            }
+
+            if (index < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+
+            slides.forEach(function(slide) {
+
+                slide.classList.remove("active");
+
+            });
+
+
+            dots.forEach(function(dot) {
+
+                dot.classList.remove("active");
+
+            });
+
+
+            slides[currentSlide]
+                .classList.add("active");
+
+
+            dots[currentSlide]
+                .classList.add("active");
+
+        }
+
+
+        function nextSlide() {
+
+            currentSlide++;
+
+            showSlide(currentSlide);
+
+        }
+
+
+        function previousSlide() {
+
+            currentSlide--;
+
+            showSlide(currentSlide);
+
+        }
+
+
+        function goToSlide(index) {
+
+            currentSlide = index;
+
+            showSlide(currentSlide);
+
+        }
+
+
+        /* ================================
+           TROCA AUTOMÁTICA
+        ================================= */
+
+        setInterval(function() {
+
+            nextSlide();
+
+        }, 5000);
+
+
+        /* ================================
+           SWIPE NO CELULAR
+        ================================= */
+
+        let touchStartX = 0;
+
+        let touchEndX = 0;
+
+
+        const carousel =
+            document.querySelector(".carousel-track");
+
+
+        carousel.addEventListener(
+            "touchstart",
+            function(event) {
+
+                touchStartX =
+                    event.changedTouches[0].screenX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        carousel.addEventListener(
+            "touchend",
+            function(event) {
+
+                touchEndX =
+                    event.changedTouches[0].screenX;
+
+
+                const difference =
+                    touchStartX - touchEndX;
+
+
+                if (difference > 50) {
+
+                    nextSlide();
+
+                }
+
+
+                if (difference < -50) {
+
+                    previousSlide();
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
